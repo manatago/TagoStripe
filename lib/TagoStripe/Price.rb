@@ -62,5 +62,6 @@ module TagoStripe
             return prices.data
         end
 
+
     end
 end
