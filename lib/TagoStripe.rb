@@ -3,6 +3,7 @@
 require_relative "TagoStripe/version"
 require_relative "TagoStripe/Product"
 require_relative "TagoStripe/Price"
+require_relative "TagoStripe/Customer"
 
 module TagoStripe
   class Error < StandardError; end
