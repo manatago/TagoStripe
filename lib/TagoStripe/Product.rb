@@ -6,7 +6,7 @@ module TagoStripe
         end
 
         def self.list
-            sest_api_key
+            set_api_key
             products = Stripe::Product.list()
             return products.data
         end
