@@ -5,26 +5,22 @@ module TagoStripe
             Stripe.api_key = ENV['STRIPE_SECRET_KEY']
         end
 
-        def self.getList
-
+        def self.list
             products = Stripe::Product.list()
             return products.data
         end
 
-        def self.getActiveList 
-
+        def self.activeList 
             products = Stripe::Product.list({active: true})
             return products.data
         end
 
         def self.getOne(product_id)
-
             product = Stripe::Product.retrieve(product_id)
             return product
         end
 
-        def self.createProduct(name, description, unit_label)
-
+        def self.create(name, description, unit_label)
             product = Stripe::Product.create({
                 name: name,
                 description: description,
@@ -33,8 +29,7 @@ module TagoStripe
             return product
         end
 
-        def self.updateProduct(product_id, name, description, unit_label)
-
+        def self.update(product_id, name, description, unit_label)
             product = Stripe::Product.update(product_id, {
                 name: name,
                 description: description,
@@ -43,12 +38,10 @@ module TagoStripe
             return product
         end
 
-        def self.deleteProduct(product_id)
-
+        def self.delete(product_id)
             product = Stripe::Product.delete(product_id)
             return product
         end
-
     end
     
 end
