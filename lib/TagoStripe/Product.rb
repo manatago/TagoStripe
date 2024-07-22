@@ -1,11 +1,12 @@
 require 'stripe'
 module TagoStripe
     class Product
-        def initialize
+        def self.set_api_key
             Stripe.api_key = ENV['STRIPE_SECRET_KEY']
         end
 
         def self.list
+            sest_api_key
             products = Stripe::Product.list()
             return products.data
         end
