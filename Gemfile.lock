@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    TagoStripe (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (13.2.1)
+    stripe (12.3.0)
+
+PLATFORMS
+  ruby
+  x86_64-darwin-22
+
+DEPENDENCIES
+  TagoStripe!
+  rake (~> 13.0)
+  stripe
+
+BUNDLED WITH
+   2.5.13
