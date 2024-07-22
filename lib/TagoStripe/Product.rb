@@ -6,7 +6,7 @@ module TagoStripe
         end
 
         def self.list
-            set_api_key
+            Stripe.api_key = ENV['STRIPE_SECRET_KEY']
             products = Stripe::Product.list()
             return products.data
         end

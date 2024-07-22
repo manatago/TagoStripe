@@ -49,7 +49,6 @@ module TagoStripe
                 customer: customer_id,
                 components: {buy_button: {enabled: true}},
             })
-
         end
 
     end
