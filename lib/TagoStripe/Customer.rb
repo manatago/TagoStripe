@@ -46,8 +46,8 @@ module TagoStripe
         def self.createCustomerSession(customer_id)
             set_api_key
             Stripe::CustomerSession.create({
-                customer: customer_id
-                components: {buy_button: {enabled: true}}
+                customer: customer_id,
+                components: {buy_button: {enabled: true}},
             })
 
         end
