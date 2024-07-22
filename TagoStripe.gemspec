@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "This is for easy use of Stripe API in TagoIO"
   spec.description = "This is for easy use of Stripe API in TagoIO"
-  spec.homepage = "https://seishinkai.tokyo"
+  spec.homepage = "https://github.com/manatago/TagoStripe"
   spec.required_ruby_version = ">= 3.0.0"
 
   #spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
