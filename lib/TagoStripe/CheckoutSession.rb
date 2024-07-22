@@ -1,7 +1,7 @@
 require 'stripe'
 module TagoStripe
     class CheckoutSession
-        def set_api_key
+        def self.set_api_key
             Stripe.api_key = ENV['STRIPE_SECRET_KEY']
         end
 
