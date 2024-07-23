@@ -17,6 +17,20 @@ module TagoStripe
             return customer
         end
 
+        #顧客名を部分一致で検索できる
+        def self.searchByName(name)
+            set_api_key
+            customers = Stripe::Customer.list
+            customers.select { |customer| customer.name.include?(name) }
+        end
+
+        #emailを部分一致で検索できる
+        def self.searchByEmail(email)
+            set_api_key
+            customers = Stripe::Customer.list
+            customers.select { |customer| customer.email.include?(email) }
+        end
+
         def self.create(email, name , metaData={})
             set_api_key
             customer = Stripe::Customer.create({
@@ -27,7 +41,7 @@ module TagoStripe
             return customer
         end
 
-        def self.update(customer_id, email, name, metaData={})
+        def self.update(customer_id, name, email, metaData={})
             set_api_key
             customer = Stripe::Customer.update(customer_id, {
                 email: email,

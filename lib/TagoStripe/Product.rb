@@ -17,6 +17,23 @@ module TagoStripe
             return products.data
         end
 
+        def self.activeListWithPrice
+            set_api_key
+            products = Stripe::Product.list({active: true})
+            products.data.each do |product|
+                prices = Stripe::Price.list({product: product.id,active: true})
+                product.prices = prices.data
+            end
+            return products.data
+        end
+
+        #製品名で検索(部分一致)
+        def self.searchByName(name)
+            set_api_key
+            products = Stripe::Product.list
+            products.select { |product| product.name.include?(name) }
+        end
+
         def self.getOne(product_id)
             set_api_key
             product = Stripe::Product.retrieve(product_id)
@@ -32,6 +49,7 @@ module TagoStripe
             })
             return product
         end
+
 
         def self.update(product_id, name, description, unit_label)
             set_api_key

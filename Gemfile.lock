@@ -1,12 +1,27 @@
 PATH
   remote: .
   specs:
-    TagoStripe (0.1.0)
+    TagoStripe (0.1.0.15)
+      stripe
 
 GEM
   remote: https://rubygems.org/
   specs:
+    diff-lcs (1.5.1)
     rake (13.2.1)
+    rspec (3.13.0)
+      rspec-core (~> 3.13.0)
+      rspec-expectations (~> 3.13.0)
+      rspec-mocks (~> 3.13.0)
+    rspec-core (3.13.0)
+      rspec-support (~> 3.13.0)
+    rspec-expectations (3.13.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-mocks (3.13.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.13.0)
+    rspec-support (3.13.1)
     stripe (12.3.0)
 
 PLATFORMS
@@ -16,6 +31,7 @@ PLATFORMS
 DEPENDENCIES
   TagoStripe!
   rake (~> 13.0)
+  rspec
   stripe
 
 BUNDLED WITH
