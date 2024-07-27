@@ -53,7 +53,6 @@ RSpec.describe 'Product' do
                 expect(price.active).to eq(true)
             end
         end
-        p products
     end
 
     ##製品の削除ができる
@@ -66,6 +65,12 @@ RSpec.describe 'Product' do
         #test_productがなくなっていることの確認
         product = TagoStripe::Product.searchByName("test_product")
         expect(product).to eq([])
+    end
+
+    ## シークレットキーが設定されている
+    it 'シークレットキーが設定されている' do
+        p @isTest
+        expect(ENV["STRIPE_SECRET_KEY"]).not_to eq(nil)
     end
 
 end
