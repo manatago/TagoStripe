@@ -25,4 +25,18 @@ RSpec.describe 'PaymentLink' do
         expect(TagoStripe::Price.list.map(&:id).include?(payment_link.price.id)).to eq(true)
     end
 
+
+    it '支払いリンクIDを指定してgetOneWithPriceAndProductが動く' do
+        payment_link_id = TagoStripe::PaymentLink.list.first.id
+        payment_link = TagoStripe::PaymentLink.getOneWithPriceAndProduct(payment_link_id)
+        expect(TagoStripe::Price.list.map(&:id).include?(payment_link.price.id)).to eq(true)
+        expect(TagoStripe::Product.list.map(&:id).include?(payment_link.product.id)).to eq(true)
+    end
+
+    #listWithPriceAndProduct
+    it '支払いリンクリスト取得がちゃんとできる' do
+        expect(TagoStripe::PaymentLink.listWithPriceAndProduct.length).to be > 1
+    end
+
+
 end

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module TagoStripe
-  VERSION = "0.1.0.16"
+  VERSION = "0.1.0.17"
 end
