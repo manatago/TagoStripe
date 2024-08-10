@@ -11,9 +11,25 @@ module TagoStripe
             return payment_links.data
         end
 
+        def self.activeList
+            set_api_key
+            payment_links = Stripe::PaymentLink.list({active: true})
+            return payment_links.data
+        end
+
+
+
         def self.getOne(payment_link_id)
             set_api_key
             payment_link = Stripe::PaymentLink.retrieve(payment_link_id)
+            return payment_link
+        end
+
+        def self.getOneWithPrice(payment_link_id)
+            set_api_key
+            payment_link = Stripe::PaymentLink.retrieve(payment_link_id)
+            payment_link_line_items = Stripe::PaymentLink.list_line_items(payment_link_id)
+            payment_link.price = payment_link_line_items.data[0].price
             return payment_link
         end
 

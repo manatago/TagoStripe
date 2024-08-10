@@ -10,7 +10,6 @@ module TagoStripe
 
         def self.list
             set_api_key
-            p self.superclass.name
             products = Stripe::Product.list()
             return products.data
         end

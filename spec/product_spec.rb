@@ -69,7 +69,7 @@ RSpec.describe 'Product' do
 
     ## シークレットキーが設定されている
     it 'シークレットキーが設定されている' do
-        p @isTest
+        # p @isTest
         expect(ENV["STRIPE_SECRET_KEY"]).not_to eq(nil)
     end
 
