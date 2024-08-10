@@ -42,7 +42,7 @@ module TagoStripe
 
         def self.cancel(subscription_id)
             set_api_key
-            subscription = Stripe::Subscription.delete(subscription_id)
+            subscription = Stripe::Subscription.cancel(subscription_id)
             return subscription
         end
 
