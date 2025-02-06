@@ -7,6 +7,7 @@ require_relative "TagoStripe/Customer"
 require_relative "TagoStripe/Common"
 require_relative "TagoStripe/Subscription"
 require_relative "TagoStripe/PaymentLink"
+require_relative "TagoStripe/CheckoutSession"
 
 
 module TagoStripe
